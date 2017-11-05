@@ -24,7 +24,7 @@ google-chrome-stable:
 htop:
   pkg.installed
 
-keypassx:
+keepassx:
   pkg.installed
 
 ntp:
