@@ -16,7 +16,7 @@ mmr:
     - group: mmr
     - file_mode: 600
 
-/homr/mmr/.vimrc:
+/home/mmr/.vimrc:
   file.managed:
     - source: salt://files/dot.vimrc
     - user: mmr
