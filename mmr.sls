@@ -22,3 +22,10 @@ mmr:
     - user: mmr
     - group: mmr
     - file_mode: 600
+
+/home/mmr/.gitconfig:
+  file.managed:
+    - source: salt://files/dot.gitconfig
+    - user: mmr
+    - group: mmr
+    - file_mode: 600
