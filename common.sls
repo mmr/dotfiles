@@ -39,8 +39,8 @@ python-dev:
 python-pip:
   pkg.installed
 
-terminator:
-  pkg.installed
+#terminator:
+#  pkg.installed
 
 tmux:
   pkg.installed
