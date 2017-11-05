@@ -4,6 +4,9 @@ clipit:
 curl:
   pkg.installed
 
+debconf-utils:
+  pkg.installed
+
 docker:
   pkg.installed
 
@@ -37,6 +40,18 @@ neovim:
   pkg.installed:
     - name: neovim
     - refresh: True
+
+oracle-java8-installer:
+  pkgrepo.managed:
+    - ppa: webupd8team/java
+  pkg.installed:
+    - require:
+      - pkgrepo: oracle-java8-installer
+  debconf.set:
+   - data:
+       'shared/accepted-oracle-license-v1-1': {'type': 'boolean', 'value': True}
+   - require_in:
+       - pkg: oracle-java8-installer
 
 python-dev:
   pkg.installed
