@@ -31,8 +31,12 @@ keepassx:
 ntp:
   pkg.installed
 
-nvim:
-  pkg.installed
+neovim:
+  pkgrepo.managed:
+    - ppa: neovim-ppa/stable
+  pkg.installed:
+    - name: neovim
+    - refresh: True
 
 python-dev:
   pkg.installed
