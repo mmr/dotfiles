@@ -29,17 +29,18 @@ install_salt() {
     return
   fi
 
+  # Making sure we are masterless
+  mkdir /etc/salt 2> /dev/null
+  echo 'file_client: local' > /etc/salt/minion
+
   # Installing
   wget -O- http://bootstrap.saltstack.org | bash
-
-  # Making sure we are masterless
-  echo 'file_client: local' > /etc/salt/minion
 }
 
 salt_it_up() {
   echo "Starting provisioning with Salt..."
   git clone git://github.com/mmr/dotfiles.git /srv/salt
-  salt-call state.highstate
+  salt-call --local state.highstate
 }
 
 # ===
