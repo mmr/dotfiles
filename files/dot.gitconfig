@@ -1,0 +1,5 @@
+[user]
+	email = binary@b1n.org
+	name = Marcio Ribeiro
+[push]
+	default = simple
