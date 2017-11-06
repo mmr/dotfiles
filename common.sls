@@ -1,3 +1,6 @@
+apt-transport-https:
+  pkg.installed
+
 clipit:
   pkg.installed
 
@@ -7,8 +10,20 @@ curl:
 debconf-utils:
   pkg.installed
 
-docker:
-  pkg.installed
+docker-pkg:
+  pkgrepo.managed:
+    - humanname: Docker Repo
+    - name: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ grains.oscodename }} stable
+    - file: /etc/apt/sources.list.d/docker.list
+    - key_url: https://download.docker.com/linux/ubuntu/gpg
+    - clean_file: True
+    - order: 1
+    - require:
+      - pkg: apt-transport-https
+  pkg.installed:
+    - name: docker-ce
+    - fromrepo: xenial
+    - refresh: True
 
 fish:
   pkg.installed
