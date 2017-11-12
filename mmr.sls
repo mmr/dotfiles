@@ -1,29 +1,28 @@
 mmr:
   user.present:
     - fullname: Marcio Ribeiro
-    - shell: /bin/bash
-    - home: /home/mmr
+    - shell: /usr/bin/fish
     - uid: 1000
     - gid: 1000
     - groups:
       - sudo
       - docker
 
-/home/mmr/.bashrc:
+~mmr/.bashrc:
   file.managed:
     - source: salt://files/dot.bashrc
     - user: mmr
     - group: mmr
     - file_mode: 600
 
-/home/mmr/.vimrc:
+~mmr/.vimrc:
   file.managed:
     - source: salt://files/dot.vimrc
     - user: mmr
     - group: mmr
     - file_mode: 600
 
-/home/mmr/.gitconfig:
+~mmr/.gitconfig:
   file.managed:
     - source: salt://files/dot.gitconfig
     - user: mmr
