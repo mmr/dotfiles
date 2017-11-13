@@ -70,7 +70,7 @@ vim_symlink_plugins:
 # Install plugins using vim.basic to force sync install
 vim_install_plugins:
   cmd.run:
-    - name: vim.basic +PlugInstall +qall
+    - name: vim.basic +PlugInstall +qall > /dev/null 2>&1
     - runas: mmr
     - require:
       - vim_plug
@@ -84,3 +84,20 @@ vim_install_plugins:
     - user: mmr
     - group: mmr
     - makedirs: True
+
+# Fish
+{% set fisher_path = '~mmr/.config/fish/functions/fisher.fish' %}
+fisher:
+  cmd.run:
+    - name: curl -Lo {{ fisher_path }} --create-dirs https://git.io/fisher
+    - unless: test -f {{ fisher_path }}
+    - runas: mmr
+    - shell: /usr/bin/fish
+
+fisher_install_plugins:
+  cmd.run:
+    - name: fisher z fzf done omf/theme-bobthefish
+    - runas: mmr
+    - shell: /usr/bin/fish
+    - require:
+      - fisher
