@@ -76,3 +76,11 @@ vim_install_plugins:
       - vim_plug
       - vim_symlink_plug
       - vim_symlink_plugins
+
+# Powerline Fonts
+~mmr/.fonts:
+  file.recurse:
+    - source: salt://files/fonts
+    - user: mmr
+    - group: mmr
+    - makedirs: True
