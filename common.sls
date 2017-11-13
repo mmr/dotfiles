@@ -26,7 +26,11 @@ docker-pkg:
     - refresh: True
 
 fish:
-  pkg.installed
+  pkgrepo.managed:
+    - ppa: fish-shell/release-2
+  pkg.installed:
+    - name: fish
+    - refresh: True
 
 git:
   pkg.installed
