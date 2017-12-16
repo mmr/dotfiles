@@ -44,6 +44,13 @@ google-chrome-stable:
   pkg.installed:
     - name: google-chrome-stable
 
+golang:
+  pkgrepo.managed:
+    - ppa: gophers/archive
+  pkg.installed:
+    - name: golang-1.9-go
+    - refresh: True
+
 htop:
   pkg.installed
 
