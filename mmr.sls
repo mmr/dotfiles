@@ -96,7 +96,7 @@ fisher:
 
 fisher_install_plugins:
   cmd.run:
-    - name: fisher z fzf done omf/theme-bobthefish
+    - name: fisher z fzf done omf/theme-bobthefish https://gist.github.com/mmr/8c1bc556fddb3be2920005f5589d8f5c
     - runas: mmr
     - shell: /usr/bin/fish
     - require:
