@@ -1,0 +1,52 @@
+# coding
+1. ssh-keygen -b 4096 -t rsa
+2. add key to github
+3. clone prezi/mmr-dotfiles
+4. run saltstack to provision laptop
+
+# essential
+0. google-chrome
+1. viscosity (vpn)
+
+# terminal
+1. install brew
+2. iterm2: brew cask install iterm2
+
+# install fzf
+1. brew install fzf
+
+# zsh
+1. zsh: brew install zsh
+2. ohmyzsh: ...
+3. cp .zshrc
+4. zsh theme: powerlevel9k
+5. download terminal fonts
+6. download source code pro + font awesome
+6. cp iterm profile : powerline font, dark solarized color scheme
+
+# vim
+1. brew install neovim
+2. cp init.vim 
+3. install vim-plug : curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+4. python support : pip install neovim
+5. pip install --upgrade neovim
+
+# python3
+1. install python3
+2. install pip3
+3. pip install ipython3
+4. install intellij / pycharm
+5. cp intellij/pycharm settings
+
+# other
+1. amethyst
+2. rocket
+3. brew install htop
+4. brew install jq
+
+
+# prezi-specific ?
+1. spoon: brew tap endreymarcell/homebrew-marca; brew install spoon; create ~/.spoon/config.json
+2. aws-assume-role: brew tap prezi/internal git@github.com:prezi/homebrew-internal.git; brew install prezi-onelogin-python-aws-assume-role
+

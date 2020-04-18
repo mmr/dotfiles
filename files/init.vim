@@ -25,7 +25,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'tomasr/molokai'
 Plug 'saltstack/salt-vim'
 Plug 'vim-airline/vim-airline'
-Plug 'dag/vim-fish'
+"Plug 'dag/vim-fish'
 
 call plug#end()
 
